@@ -12,7 +12,7 @@ namespace GreenvilleRevenueGUI
 {
     public partial class Form1 : Form
     {
-        double const FEE = 25.00;
+        const double FEE = 25.00;
         
         public Form1()
         {
@@ -21,13 +21,13 @@ namespace GreenvilleRevenueGUI
 
         private void calcRevenueBtn_Click(object sender, EventArgs e)
         {
-            contestents1 = inputLastYeat.Text;
-            contestents2 = inputThisYeat.Text;
-            double revenue = int.Parse(contestents2) * FEE;
+            string contestants1 = inputLastYear.Text;
+            string contestants2 = inputThisYear.Text;
+            double revenue = int.Parse(contestants2) * FEE;
             outputRevenue.Text = revenue.ToString("C");
             outputRevenue.Visible = true;
-            bool yearTwoIsBigger = double.Parse(contestents2) > double.Parse(contestents1);
-            outputMoreOrLess.Text = String.Format("It is {0} that this year has more contestents than last year.", yearTwoIsBigger);
+            bool yearTwoIsBigger = double.Parse(contestants2) > double.Parse(contestants1);
+            outputMoreOrLess.Text = String.Format("It is {0} that this year has more contestants than last year.", yearTwoIsBigger);
             outputMoreOrLess.Visible = true;
             
         }
